@@ -33,11 +33,11 @@
 
 .card-hover:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .dark .card-hover:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 .skill-bar {
@@ -54,7 +54,7 @@
 }
 
 .hero-pattern {
-    background-image: radial-gradient(circle at 25px 25px, rgba(255,255,255,0.2) 2px, transparent 0), radial-gradient(circle at 75px 75px, rgba(255,255,255,0.2) 2px, transparent 0);
+    background-image: radial-gradient(circle at 25px 25px, rgba(255, 255, 255, 0.2) 2px, transparent 0), radial-gradient(circle at 75px 75px, rgba(255, 255, 255, 0.2) 2px, transparent 0);
     background-size: 100px 100px;
 }
 
@@ -93,7 +93,7 @@
     background: white;
     border-radius: 50%;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .theme-toggle.dark::before {
@@ -108,13 +108,25 @@
 }
 
 @keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
 }
 
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: currentColor }
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: currentColor
+    }
 }
 
 .progress-bar {
@@ -142,18 +154,42 @@
     animation: float 6s ease-in-out infinite;
 }
 
-.floating-shape:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-.floating-shape:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
-.floating-shape:nth-child(3) { top: 80%; left: 20%; animation-delay: 4s; }
-.floating-shape:nth-child(4) { top: 30%; left: 70%; animation-delay: 1s; }
-.floating-shape:nth-child(5) { top: 70%; left: 50%; animation-delay: 3s; }
+.floating-shape:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-shape:nth-child(2) {
+    top: 60%;
+    left: 80%;
+    animation-delay: 2s;
+}
+
+.floating-shape:nth-child(3) {
+    top: 80%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.floating-shape:nth-child(4) {
+    top: 30%;
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.floating-shape:nth-child(5) {
+    top: 70%;
+    left: 50%;
+    animation-delay: 3s;
+}
 
 /* Fix for hero section height to prevent overlap */
+/* Fix for hero section height - allow scrolling if content overflows */
 .hero-section {
-    height: 100vh;
     min-height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
+    position: relative;
+    /* overflow: hidden; Keeping this for shapes, but removing max-height */
 }
 
 /* Ensure proper spacing between sections */
@@ -165,14 +201,26 @@
 /* Additional responsive adjustments */
 @media (max-width: 768px) {
     .hero-section {
-        height: 100vh;
         min-height: 100vh;
+        height: auto;
+        padding-top: 80px;
+        /* Space for navbar */
+        padding-bottom: 40px;
     }
 }
 
 @media (max-width: 480px) {
     .hero-section {
-        height: 100vh;
         min-height: 100vh;
+        height: auto;
     }
+}
+
+
+
+
+
+.nav-pad {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
